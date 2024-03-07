@@ -1,7 +1,6 @@
-const b = 2;
-const add = (x, y) => {
-    return x + y;
-};
+function isObject(target) {
+    return typeof target === 'object' && target !== null;
+}
 
-export { add, b };
+export { isObject };
 //# sourceMappingURL=shared.esm-bundler.js.map

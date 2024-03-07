@@ -1,4 +1,4 @@
-var VueReactivity = (function (exports) {
+var Vue = (function (exports) {
     'use strict';
 
     function isObject(target) {
@@ -6,11 +6,8 @@ var VueReactivity = (function (exports) {
     }
 
     const get = createGetter();
-    const shallowReactiveGet = createGetter(true);
     const readonlyGet = createGetter(false, true);
-    const shallowReadonlyGet = createGetter(true, true);
     const set = createSetter();
-    const shallowReactiveSet = createSetter(true);
     function createGetter(isShallow = false, isReadonly = true) {
         return function get(target, key, receiver) {
             const res = Reflect.get(target, key, receiver);
@@ -34,18 +31,8 @@ var VueReactivity = (function (exports) {
         get,
         set
     };
-    const shallowReactiveHandler = {
-        get: shallowReactiveGet,
-        set: shallowReactiveSet
-    };
     const readonlyHandler = {
         get: readonlyGet,
-        set: (target, key, value) => {
-            console.error("set on key is failed");
-        }
-    };
-    const shallowReadonlyHandler = {
-        get: shallowReadonlyGet,
         set: (target, key, value) => {
             console.error("set on key is failed");
         }
@@ -54,14 +41,8 @@ var VueReactivity = (function (exports) {
     function reactive(target) {
         return createReactObj(target, false, reactiveHandler);
     }
-    function shallowReactive(target) {
-        return createReactObj(target, false, shallowReactiveHandler);
-    }
     function readonly(target) {
         return createReactObj(target, true, readonlyHandler);
-    }
-    function shallowReadonly(target) {
-        return createReactObj(target, true, shallowReadonlyHandler);
     }
     //哈希表，避免重复代理
     const reactiveMap = new WeakMap();
@@ -86,10 +67,8 @@ var VueReactivity = (function (exports) {
 
     exports.reactive = reactive;
     exports.readonly = readonly;
-    exports.shallowReactive = shallowReactive;
-    exports.shallowReadonly = shallowReadonly;
 
     return exports;
 
 })({});
-//# sourceMappingURL=reactivity.global.js.map
+//# sourceMappingURL=vue.global.js.map

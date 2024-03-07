@@ -1,10 +1,8 @@
 'use strict';
 
-const b = 2;
-const add = (x, y) => {
-    return x + y;
-};
+function isObject(target) {
+    return typeof target === 'object' && target !== null;
+}
 
-exports.add = add;
-exports.b = b;
+exports.isObject = isObject;
 //# sourceMappingURL=shared.cjs.js.map

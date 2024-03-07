@@ -1,0 +1,15 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+  },
+  "buildOptions": {
+    "name": "Vue",
+    "formats": [
+      "esm-bundler",
+      "cjs",
+      "global"
+    ]
+  }
+}
