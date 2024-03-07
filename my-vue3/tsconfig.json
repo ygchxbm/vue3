@@ -1,0 +1,43 @@
+//{
+//  "compilerOptions": {
+//    "outDir": "dist",
+//    "sourceMap": true,
+//    "target": "ES2016",
+//    "module": "esnext",
+//    "moduleResolution": "node",
+//    "strict": false,
+//    "resolveJsonModule": true,
+//    "esModuleInterop": true,
+//    "jsx": "preserve",
+//    "lib": [
+//      "ESNext",
+//      "DOM"
+//    ],
+//    "baseUrl": ".",
+//    "paths": {
+//      "@hzb/*": [
+//        "packages/*/src"
+//      ]
+//    }
+//  }
+//}
+
+
+{
+  "compilerOptions": {
+//    "outDir": "dist",
+    "target": "es2016",
+    "module": "ESNext",
+    "moduleResolution": "bundler", //关键
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@hzb/*": [
+        "packages/*/src"
+      ]
+    }
+  }
+}

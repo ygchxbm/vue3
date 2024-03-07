@@ -1,0 +1,15 @@
+{
+  "name": "@hzb/reactivity",
+  "private": true,
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "license": "MIT",
+  "buildOptions": {
+    "name": "VueReactivity",
+    "formats": [
+      "esm-bundler",
+      "cjs",
+      "global"
+    ]
+  }
+}
